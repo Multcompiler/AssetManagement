@@ -83,32 +83,82 @@ class ManageController extends Controller
                 'effective' => 'required',
                 'effective_measure' => 'required',
             ));
+
+            if($request->has("sub_description")){
+                $sub_description = $request->sub_description;
+            }else{
+                $sub_description = "-";
+            }
+
+            //Save Dataa
+            $data_save = new ArmamentStore();
+            $data_save->category_id = $request->category;
+            $data_save->description_id = $request->description;
+            $data_save->sub_description_id = $sub_description;
+            $data_save->registration_no = $request->reg_no;
+            $data_save->stock_no = $request->stock;
+            $data_save->asset_type = $request->asset;
+            $data_save->caliber = $request->caliber;
+            $data_save->location = $request->location;
+            $data_save->country_code = $request->country_code;
+            $data_save->date_of_service = $request->date_service;
+            $data_save->maximum_range = $request->range." ".$request->range_measure;
+            $data_save->effective_range = $request->effective." ".$request->effective_measure;
+            $data_save->oparational_status = $request->operation_status;
+
+            $data_save->save();
+
+            response()->json(array("message" => "data Inserted"));
+
+
         }
-        if($request->has("sub_description")){
-            $sub_description = $request->sub_description;
-        }else{
-            $sub_description = "-";
+        elseif ($request->selection == "choice-2"){
+            $this->validate($request, array(
+                'category' => 'required',
+                'description' => 'required',
+                'reg_no' => 'required',
+                'stock' => 'required',
+                'asset' => 'required',
+                'caliber' => 'required',
+                'location' => 'required',
+                'country_code' => 'required',
+                'date_service' => 'required',
+                'operation_status' => 'required',
+                'range' => 'required',
+                'range_measure' => 'required',
+                'effective' => 'required',
+                'effective_measure' => 'required',
+            ));
+
+            if($request->has("sub_description")){
+                $sub_description = $request->sub_description;
+            }else{
+                $sub_description = "-";
+            }
+
+            //Save Dataa
+            $data_save = new ArmamentStore();
+            $data_save->category_id = $request->category;
+            $data_save->description_id = $request->description;
+            $data_save->sub_description_id = $sub_description;
+            $data_save->registration_no = $request->reg_no;
+            $data_save->stock_no = $request->stock;
+            $data_save->asset_type = $request->asset;
+            $data_save->caliber = $request->caliber;
+            $data_save->location = $request->location;
+            $data_save->country_code = $request->country_code;
+            $data_save->date_of_service = $request->date_service;
+            $data_save->maximum_range = $request->range." ".$request->range_measure;
+            $data_save->effective_range = $request->effective." ".$request->effective_measure;
+            $data_save->oparational_status = $request->operation_status;
+
+            $data_save->save();
+
+            response()->json(array("message" => "data Inserted"));
+
+
         }
 
-        //Save Dataa
-        $data_save = new ArmamentStore();
-        $data_save->category_id = $request->category;
-        $data_save->description_id = $request->description;
-        $data_save->sub_description_id = $sub_description;
-        $data_save->registration_no = $request->reg_no;
-        $data_save->stock_no = $request->stock;
-        $data_save->asset_type = $request->asset;
-        $data_save->caliber = $request->caliber;
-        $data_save->location = $request->location;
-        $data_save->country_code = $request->country_code;
-        $data_save->date_of_service = $request->date_service;
-        $data_save->maximum_range = $request->range." ".$request->range_measure;
-        $data_save->effective_range = $request->effective." ".$request->effective_measure;
-        $data_save->oparational_status = $request->operation_status;
-
-        $data_save->save();
-
-        response()->json(array("message" => "data Inserted"));
     }
     public function get_category(){
         $categories = MainCategory::all();

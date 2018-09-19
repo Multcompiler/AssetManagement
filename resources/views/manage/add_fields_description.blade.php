@@ -172,25 +172,25 @@
                             <div class="col-md-3 choice_2">
                                 <div class="form-group">
                                     <label class="form-control-label">Stock No: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="stock_no" placeholder="Enter Stock No">
+                                    <input class="form-control" type="text" id="stock_no_choice_2" placeholder="Enter Stock No">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_2">
                                 <div class="form-group">
                                     <label class="form-control-label">Type: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="type" placeholder="Type">
+                                    <input class="form-control" type="text" id="type_choice_2" placeholder="Type">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_2">
                                 <div class="form-group">
                                     <label class="form-control-label">Unit: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="unit" placeholder="Unit">
+                                    <input class="form-control" type="text" id="unit_choice_2" placeholder="Unit">
                                 </div>
                             </div>
                             <div class="col-md-3 col-lg-3 mg-t-10 mg-lg-t-0 choice_2">
                                 <div class="form-group mg-b-0">
                                     <label>Date into service <span class="tx-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-datepicker tx-14 date_service" data-language="en" placeholder="Date">
+                                    <input type="text" class="form-control form-control-datepicker tx-14 date_service date_service_choice_2" data-language="en" placeholder="Date">
                                 </div><!-- form-group -->
                             </div>
 
@@ -200,20 +200,20 @@
                             <div class="col-md-8 choice_3">
                                 <div class="form-group">
                                     <label class="form-control-label">Type of radio/equipment: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="type_radio" placeholder="Enter Type">
+                                    <input class="form-control" type="text" id="type_radio_choice_3" placeholder="Enter Type">
                                 </div>
                             </div>
                             <div class="col-md-4 choice_3">
                                 <div class="form-group">
                                     <label class="form-control-label">Unit: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="type" placeholder="Unit">
+                                    <input class="form-control" type="text" id="type_choice_3" placeholder="Unit">
                                 </div>
                             </div>
 
                             <div class="col-md-6 choice_3">
                                 <div class="form-group mg-b-10-force">
                                     <label class="form-control-label">Status: <span class="tx-danger">*</span></label>
-                                    <select class="form-control">
+                                    <select class="form-control" id="status_choice_3">
                                         <option value=""> -- Default -- </option>
                                         <option value="function"> Function </option>
                                         <option value="non_function"> Non Function </option>
@@ -223,7 +223,7 @@
                             <div class="col-md-6 col-lg-6 mg-t-10 mg-lg-t-0 choice_3">
                                 <div class="form-group mg-b-0">
                                     <label>Date into service <span class="tx-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-datepicker tx-14 date_service" data-language="en" placeholder="Date">
+                                    <input type="text" class="form-control form-control-datepicker tx-14 date_service date_service_choice_3" data-language="en" placeholder="Date">
                                 </div><!-- form-group -->
                             </div>
 
@@ -682,7 +682,54 @@
                         $(".success_message").css("display","none");
                     },5000);
                 });
-            }else{
+            }
+            else if(($("#sub_selection").val() == "choice-2") || ($("#full_selection").val() == "choice-2")){
+                var selection = "choice-2";
+
+                $.ajax({
+                    url: "/Manage/Save/Field",
+                    type: 'POST',
+                    data: {stock_no: $("#stock_no_choice_2").val(),type:$("#type_choice_2").val(),unit:$("#unit_choice_2").val()
+                        ,selection:selection,date_service:$("#date_service_choice_2").val()},
+                    success: function (response) {
+                        //console.log(response);
+                        $(".fail_message").css("display","none");
+                        $(".field_btn").prop("disabled",false);
+                        $(".success_message").css("display","block");
+                        $(".field").css("opacity","unset");
+                        $("#loading-spinner-save").css("display","none");
+                    },
+
+                    error: function (jqXHR) {
+                        // var response = $.parseJSON(jqXHR.responseText);
+                        //console.log(jqXHR);
+                        //console.log(respose)n;
+                        if(jqXHR) {
+                            $(".fail_message").css("display","block");
+                            var message = $("#message_fail");
+                            message.empty();
+                            console.log(jqXHR);
+                            message.append("Something went wrong");
+                            $(".field").css("opacity","unset");
+                            $(".field_btn").prop("disabled",false);
+                            $("#loading-spinner-save").css("display","none");
+                            //hide success alert after 3 seconds
+                            setTimeout(function(){
+                                $(".success_message").css("display","none");
+                            },3000);
+                        }
+                    }
+                }).done (function(data){
+                    $("#loading-spinner-save").css("display","none");
+                    $(".field").css("opacity","unset");
+                    $("input[type=text], textarea").val("");
+                    //hide success alert after 3 seconds
+                    setTimeout(function(){
+                        $(".success_message").css("display","none");
+                    },5000);
+                });
+            }
+            else{
                 $(".fail_message").css("display","block");
                 var message = $("#message_fail");
                 message.empty();
@@ -694,4 +741,5 @@
 
         }
     </script>
+
 @endsection
