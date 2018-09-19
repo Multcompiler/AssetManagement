@@ -206,7 +206,7 @@
                             <div class="col-md-4 choice_3">
                                 <div class="form-group">
                                     <label class="form-control-label">Unit: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="type_choice_3" placeholder="Unit">
+                                    <input class="form-control" type="text" id="unit_choice_3" placeholder="Unit">
                                 </div>
                             </div>
 
@@ -233,37 +233,37 @@
                             <div class="col-md-3 choice_4">
                                 <div class="form-group">
                                     <label class="form-control-label">Registration No: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="reg_no" placeholder="Enter Registration No">
+                                    <input class="form-control" type="text" id="reg_no_choice_4" placeholder="Enter Registration No">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_4">
                                 <div class="form-group">
                                     <label class="form-control-label">Make: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="make" placeholder="Make">
+                                    <input class="form-control" type="text" id="make_choice_4" placeholder="Make">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_4">
                                 <div class="form-group">
                                     <label class="form-control-label">Model/Description: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="model" placeholder="Enter Model">
+                                    <input class="form-control" type="text" id="model_choice_4" placeholder="Enter Model">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_4">
                                 <div class="form-group">
                                     <label class="form-control-label">Tonnage: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="tonnage" placeholder="Enter Tonnage">
+                                    <input class="form-control" type="text" id="tonnage_choice_4" placeholder="Enter Tonnage">
                                 </div>
                             </div>
                             <div class="col-md-4 choice_4">
                                 <div class="form-group">
                                     <label class="form-control-label">Unit/Location: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="location" placeholder="Enter Location">
+                                    <input class="form-control" type="text" id="location_choice_4" placeholder="Enter Location">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_4">
                                 <div class="form-group mg-b-10-force">
                                     <label class="form-control-label">Status Operation 1: <span class="tx-danger">*</span></label>
-                                    <select class="form-control">
+                                    <select class="form-control" id="status_one_choice_4">
                                         <option value=""> -- Default -- </option>
                                         <option value="function"> Running  </option>
                                         <option value="non_function"> Not running </option>
@@ -273,7 +273,7 @@
                             <div class="col-md-3 choice_4">
                                 <div class="form-group mg-b-10-force">
                                     <label class="form-control-label">Status Operation 2: <span class="tx-danger">*</span></label>
-                                    <select class="form-control">
+                                    <select class="form-control" id="status_two_choice_4">
                                         <option value=""> -- Default -- </option>
                                         <option value="function"> Serviceable </option>
                                         <option value="non_function"> Not serviceable </option>
@@ -283,19 +283,19 @@
                             <div class="col-md-2 choice_4">
                                 <div class="form-group">
                                     <label class="form-control-label">Fuel capacity: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="fuel_capacity" placeholder="Fuel Capacity">
+                                    <input class="form-control" type="text" id="fuel_capacity_choice_4" placeholder="Fuel Capacity">
                                 </div>
                             </div>
                             <div class="col-md-4 choice_4">
                                 <div class="form-group">
                                     <label class="form-control-label">Type of fuel: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="fuel_type" placeholder="Fuel type">
+                                    <input class="form-control" type="text" id="fuel_type_choice_4" placeholder="Fuel type">
                                 </div>
                             </div>
                             <div class="col-md-8 choice_4">
                                 <div class="form-group">
                                     <label class="form-control-label">Remarks: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="remark" placeholder="Vehicle Remark">
+                                    <input class="form-control" type="text" id="remark_choice_4" placeholder="Vehicle Remark">
                                 </div>
                             </div>
 
@@ -305,49 +305,49 @@
                             <div class="col-md-3 choice_5">
                                 <div class="form-group">
                                     <label class="form-control-label">Type of Aircraft/Helicopter: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="type_aircraft" placeholder="Type Aircraft">
+                                    <input class="form-control" type="text" id="type_aircraft_choice_5" placeholder="Type Aircraft">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_5">
                                 <div class="form-group">
                                     <label class="form-control-label">Make/Manufacture: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="manufacture" placeholder="Manufacture">
+                                    <input class="form-control" type="text" id="manufacture_choice_5" placeholder="Manufacture">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_5">
                                 <div class="form-group">
                                     <label class="form-control-label">Aircraft serial number: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="model" placeholder="Serial number">
+                                    <input class="form-control" type="text" id="model_choice_5" placeholder="Serial number">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_5">
                                 <div class="form-group">
                                     <label class="form-control-label">Registration No: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="reg_no" placeholder="Registration No">
+                                    <input class="form-control" type="text" id="reg_no_choice_5" placeholder="Registration No">
                                 </div>
                             </div>
                             <div class="col-md-3 col-lg-3 mg-t-10 mg-lg-t-0 choice_5">
                                 <div class="form-group mg-b-0">
                                     <label>Date Revive <span class="tx-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-datepicker tx-14 date_service" data-language="en" placeholder="Date of Service">
+                                    <input type="text" class="form-control form-control-datepicker tx-14 date_service date_service_choice_5" data-language="en" placeholder="Date of Service">
                                 </div><!-- form-group -->
                             </div>
                             <div class="col-md-3 choice_5">
                                 <div class="form-group">
                                     <label class="form-control-label">Unit: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="unit" placeholder="Unit">
+                                    <input class="form-control" type="text" id="unit_choice_5" placeholder="Unit">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_5">
                                 <div class="form-group">
                                     <label class="form-control-label">Location: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="model" placeholder="Current Location">
+                                    <input class="form-control" type="text" id="location_choice_5" placeholder="Current Location">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_5">
                                 <div class="form-group mg-b-10-force">
                                     <label class="form-control-label">Aircraft Serviceability Status  1: <span class="tx-danger">*</span></label>
-                                    <select class="form-control">
+                                    <select class="form-control" id="status_one_choice_5">
                                         <option value=""> -- Default -- </option>
                                         <option value="function"> Operative  </option>
                                         <option value="non_function"> Non operative </option>
@@ -357,7 +357,7 @@
                             <div class="col-md-4 choice_5">
                                 <div class="form-group mg-b-10-force">
                                     <label class="form-control-label">Aircraft Serviceability Status 2: <span class="tx-danger">*</span></label>
-                                    <select class="form-control">
+                                    <select class="form-control" id="status_two_choice_5">
                                         <option value=""> -- Default -- </option>
                                         <option value="function"> Serviceable </option>
                                         <option value="non_function"> Unserviceable </option>
@@ -367,7 +367,7 @@
                             <div class="col-md-8 choice_5">
                                 <div class="form-group">
                                     <label class="form-control-label">Remarks: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="remark" placeholder="Aircraft Remark">
+                                    <input class="form-control" type="text" id="remark_choice_5" placeholder="Aircraft Remark">
                                 </div>
                             </div>
 
@@ -377,25 +377,25 @@
                             <div class="col-md-3 choice_6">
                                 <div class="form-group">
                                     <label class="form-control-label">Stock No: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="stock_no" placeholder="Enter Stock no">
+                                    <input class="form-control" type="text" id="stock_no_choice_6" placeholder="Enter Stock no">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_6">
                                 <div class="form-group">
                                     <label class="form-control-label">Type of equipment: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="equipment_type" placeholder="Type of Equipment">
+                                    <input class="form-control" type="text" id="equipment_type_choice_6" placeholder="Type of Equipment">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_6">
                                 <div class="form-group">
                                     <label class="form-control-label">Unit: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="unit" placeholder="Unit">
+                                    <input class="form-control" type="text" id="unit_choice_6" placeholder="Unit">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_6">
                                 <div class="form-group">
                                     <label class="form-control-label">Status/Condition: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="equipment_type" placeholder="Status">
+                                    <input class="form-control" type="text" id="condition_choice_6" placeholder="Status">
                                 </div>
                             </div>
 
@@ -405,25 +405,25 @@
                             <div class="col-md-3 choice_7">
                                 <div class="form-group">
                                     <label class="form-control-label">Stock No: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="stock_no" placeholder="Enter Stock no">
+                                    <input class="form-control" type="text" id="stock_no_choice_7" placeholder="Enter Stock no">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_7">
                                 <div class="form-group">
                                     <label class="form-control-label">Type of plant: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="plant_type" placeholder="Type of Plant">
+                                    <input class="form-control" type="text" id="plant_type_choice_7" placeholder="Type of Plant">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_7">
                                 <div class="form-group">
                                     <label class="form-control-label">Unit: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="unit" placeholder="Unit">
+                                    <input class="form-control" type="text" id="unit_choice_7" placeholder="Unit">
                                 </div>
                             </div>
                             <div class="col-md-3 choice_7">
                                 <div class="form-group">
                                     <label class="form-control-label">Condition: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" id="condition" placeholder="Condition">
+                                    <input class="form-control" type="text" id="condition_choice_7" placeholder="Condition">
                                 </div>
                             </div>
 
@@ -689,8 +689,248 @@
                 $.ajax({
                     url: "/Manage/Save/Field",
                     type: 'POST',
-                    data: {stock_no: $("#stock_no_choice_2").val(),type:$("#type_choice_2").val(),unit:$("#unit_choice_2").val()
-                        ,selection:selection,date_service:$("#date_service_choice_2").val()},
+                    data: {category: $("#category").val(),description:$("#description").val(),sub_description:$("#sub_description_list").val()
+                        ,stock_no: $("#stock_no_choice_2").val(),type:$("#type_choice_2").val(),unit:$("#unit_choice_2").val()
+                        ,selection:selection,date_of_service:$(".date_service_choice_2").val()},
+                    success: function (response) {
+                        //console.log(response);
+                        $(".fail_message").css("display","none");
+                        $(".field_btn").prop("disabled",false);
+                        $(".success_message").css("display","block");
+                        $(".field").css("opacity","unset");
+                        $("#loading-spinner-save").css("display","none");
+                    },
+
+                    error: function (jqXHR) {
+                        // var response = $.parseJSON(jqXHR.responseText);
+                        //console.log(jqXHR);
+                        //console.log(respose)n;
+                        if(jqXHR) {
+                            $(".fail_message").css("display","block");
+                            var message = $("#message_fail");
+                            message.empty();
+                            console.log(jqXHR);
+                            message.append("Something went wrong");
+                            $(".field").css("opacity","unset");
+                            $(".field_btn").prop("disabled",false);
+                            $("#loading-spinner-save").css("display","none");
+                            //hide success alert after 3 seconds
+                            setTimeout(function(){
+                                $(".success_message").css("display","none");
+                            },3000);
+                        }
+                    }
+                }).done (function(data){
+                    $("#loading-spinner-save").css("display","none");
+                    $(".field").css("opacity","unset");
+                    $("input[type=text], textarea").val("");
+                    //hide success alert after 3 seconds
+                    setTimeout(function(){
+                        $(".success_message").css("display","none");
+                    },5000);
+                });
+            }
+            else if(($("#sub_selection").val() == "choice-3") || ($("#full_selection").val() == "choice-3")){
+                var selection = "choice-3";
+
+                $.ajax({
+                    url: "/Manage/Save/Field",
+                    type: 'POST',
+                    data: {category: $("#category").val(),description:$("#description").val(),sub_description:$("#sub_description_list").val()
+                        ,status: $("#status_choice_3").val(),type_radio:$("#type_radio_choice_3").val(),unit:$("#unit_choice_3").val()
+                        ,selection:selection,date_of_service:$(".date_service_choice_3").val()},
+                    success: function (response) {
+                        //console.log(response);
+                        $(".fail_message").css("display","none");
+                        $(".field_btn").prop("disabled",false);
+                        $(".success_message").css("display","block");
+                        $(".field").css("opacity","unset");
+                        $("#loading-spinner-save").css("display","none");
+                    },
+
+                    error: function (jqXHR) {
+                        // var response = $.parseJSON(jqXHR.responseText);
+                        //console.log(jqXHR);
+                        //console.log(respose)n;
+                        if(jqXHR) {
+                            $(".fail_message").css("display","block");
+                            var message = $("#message_fail");
+                            message.empty();
+                            console.log(jqXHR);
+                            message.append("Something went wrong");
+                            $(".field").css("opacity","unset");
+                            $(".field_btn").prop("disabled",false);
+                            $("#loading-spinner-save").css("display","none");
+                            //hide success alert after 3 seconds
+                            setTimeout(function(){
+                                $(".success_message").css("display","none");
+                            },3000);
+                        }
+                    }
+                }).done (function(data){
+                    $("#loading-spinner-save").css("display","none");
+                    $(".field").css("opacity","unset");
+                    $("input[type=text], textarea").val("");
+                    //hide success alert after 3 seconds
+                    setTimeout(function(){
+                        $(".success_message").css("display","none");
+                    },5000);
+                });
+            }
+            else if(($("#sub_selection").val() == "choice-4") || ($("#full_selection").val() == "choice-4")){
+                var selection = "choice-4";
+
+                $.ajax({
+                    url: "/Manage/Save/Field",
+                    type: 'POST',
+                    data: {category: $("#category").val(),description:$("#description").val(),sub_description:$("#sub_description_list").val()
+                        ,reg_no: $("#reg_no_choice_4").val(),make:$("#make_choice_4").val(),model:$("#model_choice_4").val()
+                        ,selection:selection,tonnage:$("#tonnage_choice_4").val(),location:$("#location_choice_4").val()
+                        ,status_one:$("#status_one_choice_4").val(),status_two:$("#status_two_choice_4").val(),fuel_type:$("#fuel_type_choice_4").val()
+                        ,remark:$("#remark_choice_4").val()},
+                    success: function (response) {
+                        //console.log(response);
+                        $(".fail_message").css("display","none");
+                        $(".field_btn").prop("disabled",false);
+                        $(".success_message").css("display","block");
+                        $(".field").css("opacity","unset");
+                        $("#loading-spinner-save").css("display","none");
+                    },
+
+                    error: function (jqXHR) {
+                        // var response = $.parseJSON(jqXHR.responseText);
+                        //console.log(jqXHR);
+                        //console.log(respose)n;
+                        if(jqXHR) {
+                            $(".fail_message").css("display","block");
+                            var message = $("#message_fail");
+                            message.empty();
+                            console.log(jqXHR);
+                            message.append("Something went wrong");
+                            $(".field").css("opacity","unset");
+                            $(".field_btn").prop("disabled",false);
+                            $("#loading-spinner-save").css("display","none");
+                            //hide success alert after 3 seconds
+                            setTimeout(function(){
+                                $(".success_message").css("display","none");
+                            },3000);
+                        }
+                    }
+                }).done (function(data){
+                    $("#loading-spinner-save").css("display","none");
+                    $(".field").css("opacity","unset");
+                    $("input[type=text], textarea").val("");
+                    //hide success alert after 3 seconds
+                    setTimeout(function(){
+                        $(".success_message").css("display","none");
+                    },5000);
+                });
+            }
+            else if(($("#sub_selection").val() == "choice-5") || ($("#full_selection").val() == "choice-5")){
+                var selection = "choice-5";
+
+                $.ajax({
+                    url: "/Manage/Save/Field",
+                    type: 'POST',
+                    data: {category: $("#category").val(),description:$("#description").val(),sub_description:$("#sub_description_list").val()
+                        ,type: $("#type_aircraft_choice_5").val(),manufacture:$("#manufacture_choice_5").val(),model:$("#model_choice_5").val()
+                        ,selection:selection,reg_no:$("#reg_no_choice_5").val(),date_of_service:$(".date_service_choice_5").val()
+                        ,unit:$("#unit_choice_5").val(),location:$("#location_choice_5").val(),status_one:$("#status_one_choice_5").val()
+                        ,status_two:$("#status_two_choice_5").val(),remark:$("#remark_choice_5").val()},
+                    success: function (response) {
+                        //console.log(response);
+                        $(".fail_message").css("display","none");
+                        $(".field_btn").prop("disabled",false);
+                        $(".success_message").css("display","block");
+                        $(".field").css("opacity","unset");
+                        $("#loading-spinner-save").css("display","none");
+                    },
+
+                    error: function (jqXHR) {
+                        // var response = $.parseJSON(jqXHR.responseText);
+                        //console.log(jqXHR);
+                        //console.log(respose)n;
+                        if(jqXHR) {
+                            $(".fail_message").css("display","block");
+                            var message = $("#message_fail");
+                            message.empty();
+                            console.log(jqXHR);
+                            message.append("Something went wrong");
+                            $(".field").css("opacity","unset");
+                            $(".field_btn").prop("disabled",false);
+                            $("#loading-spinner-save").css("display","none");
+                            //hide success alert after 3 seconds
+                            setTimeout(function(){
+                                $(".success_message").css("display","none");
+                            },3000);
+                        }
+                    }
+                }).done (function(data){
+                    $("#loading-spinner-save").css("display","none");
+                    $(".field").css("opacity","unset");
+                    $("input[type=text], textarea").val("");
+                    //hide success alert after 3 seconds
+                    setTimeout(function(){
+                        $(".success_message").css("display","none");
+                    },5000);
+                });
+            }
+            else if(($("#sub_selection").val() == "choice-6") || ($("#full_selection").val() == "choice-6")){
+                var selection = "choice-6";
+
+                $.ajax({
+                    url: "/Manage/Save/Field",
+                    type: 'POST',
+                    data: {category: $("#category").val(),description:$("#description").val(),sub_description:$("#sub_description_list").val()
+                        ,stock_no: $("#stock_no_choice_6").val(),equipment_type:$("#equipment_type_choice_6").val(),unit:$("#unit_choice_6").val()
+                        ,selection:selection,condition:$("#condition_choice_6").val()},
+                    success: function (response) {
+                        //console.log(response);
+                        $(".fail_message").css("display","none");
+                        $(".field_btn").prop("disabled",false);
+                        $(".success_message").css("display","block");
+                        $(".field").css("opacity","unset");
+                        $("#loading-spinner-save").css("display","none");
+                    },
+
+                    error: function (jqXHR) {
+                        // var response = $.parseJSON(jqXHR.responseText);
+                        //console.log(jqXHR);
+                        //console.log(respose)n;
+                        if(jqXHR) {
+                            $(".fail_message").css("display","block");
+                            var message = $("#message_fail");
+                            message.empty();
+                            console.log(jqXHR);
+                            message.append("Something went wrong");
+                            $(".field").css("opacity","unset");
+                            $(".field_btn").prop("disabled",false);
+                            $("#loading-spinner-save").css("display","none");
+                            //hide success alert after 3 seconds
+                            setTimeout(function(){
+                                $(".success_message").css("display","none");
+                            },3000);
+                        }
+                    }
+                }).done (function(data){
+                    $("#loading-spinner-save").css("display","none");
+                    $(".field").css("opacity","unset");
+                    $("input[type=text], textarea").val("");
+                    //hide success alert after 3 seconds
+                    setTimeout(function(){
+                        $(".success_message").css("display","none");
+                    },5000);
+                });
+            }
+            else if(($("#sub_selection").val() == "choice-7") || ($("#full_selection").val() == "choice-7")){
+                var selection = "choice-7";
+
+                $.ajax({
+                    url: "/Manage/Save/Field",
+                    type: 'POST',
+                    data: {category: $("#category").val(),description:$("#description").val(),sub_description:$("#sub_description_list").val()
+                        ,stock_no: $("#stock_no_choice_7").val(),plant_type:$("#plant_type_choice_7").val(),unit:$("#unit_choice_7").val()
+                        ,selection:selection,condition:$("#condition_choice_7").val()},
                     success: function (response) {
                         //console.log(response);
                         $(".fail_message").css("display","none");

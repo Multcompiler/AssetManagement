@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExplosivesTable extends Migration
+class CreateExplosiveStoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateExplosivesTable extends Migration
      */
     public function up()
     {
-        Schema::create('explosives', function (Blueprint $table) {
+        Schema::create('explosive_stores', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id');
             $table->integer('description_id');
@@ -33,6 +33,6 @@ class CreateExplosivesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('explosives');
+        Schema::dropIfExists('explosive_stores');
     }
 }
