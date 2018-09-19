@@ -42,6 +42,7 @@
     {{Html::style("lib/perfect-scrollbar/css/perfect-scrollbar.css")}}
     {{Html::style("lib/jquery-switchbutton/jquery.switchButton.css")}}
     {{Html::style("lib/rickshaw/rickshaw.min.css")}}
+    {{Html::style("lib/datatables/jquery.dataTables.css")}}
     {{Html::style("lib/select2/css/select2.min.css")}}
 
 
@@ -175,17 +176,10 @@
 
 <!-- ########## START: MAIN PANEL ########## -->
 <div class="br-mainpanel">
-    {{--<div class="br-pagetitle">--}}
-        {{--<i class="icon ion-ios-home-outline"></i>--}}
-        {{--<div class="alert alert-bordered alert-success" role="alert">--}}
-            {{--<button type="button" class="close" data-dismiss="alert" aria-label="Close">--}}
-                {{--<span aria-hidden="true">×</span>--}}
-            {{--</button>--}}
-            {{--<strong class="d-block d-sm-inline-block-force">Well done!</strong> You successfully read this important alert message.--}}
-        {{--</div>--}}
-    {{--</div>--}}
 
-    <div class="br-pagebody">
+        @yield("link-description")
+
+    <div class="br-pagebody" style="margin-top: 0;">
 
         @yield("main-content")
 
@@ -213,11 +207,6 @@
 {{Html::script("lib/peity/jquery.peity.js")}}
 {{Html::script("lib/d3/d3.js")}}
 {{Html::script("lib/rickshaw/rickshaw.min.js")}}
-{{Html::script("lib/Flot/jquery.flot.js")}}
-{{Html::script("lib/Flot/jquery.flot.resize.js")}}
-{{Html::script("lib/flot-spline/jquery.flot.spline.js")}}
-{{Html::script("lib/jquery.sparkline.bower/jquery.sparkline.min.js")}}
-{{Html::script("lib/echarts/echarts.min.js")}}
 {{Html::script("lib/select2/js/select2.full.min.js")}}
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyCuWEQWfVkWfcUoSIZeGw5JioT9LVCwYkE"></script>
 {{Html::script("lib/gmaps/gmaps.js")}}
@@ -225,6 +214,10 @@
 {{Html::script("js/map.shiftworker.js")}}
 {{Html::script("js/ResizeSensor.js")}}
 {{Html::script("js/dashboard.js")}}
+
+{{Html::script("lib/datatables/jquery.dataTables.js")}}
+{{Html::script("lib/datatables-responsive/dataTables.responsive.js")}}
+{{Html::script("lib/select2/js/select2.min.js")}}
 
 @yield("page-script")
 

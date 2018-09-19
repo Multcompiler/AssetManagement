@@ -1,7 +1,15 @@
 @extends("main")
 
-@section("title","| Base Details")
+@section("title","|Add Base Details")
 
+@section("link-description")
+    <div class="br-pageheader">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
+            <a class="breadcrumb-item" href="/">Home</a>
+            <span class="breadcrumb-item active">Add Base Info</span>
+        </nav>
+    </div>
+    @endsection
 @section("main-content")
     <div class="row row-sm mg-t-20">
         <div class="col-md-12">

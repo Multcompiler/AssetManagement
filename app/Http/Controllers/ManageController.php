@@ -7,7 +7,6 @@ use App\ArmamentStore;
 use App\CategoryDescription;
 use App\CommunicationEquipmentStore;
 use App\EngineeringEquipmentStore;
-use App\Explosive;
 use App\ExplosiveStore;
 use App\MainCategory;
 use App\PlantStore;
@@ -21,6 +20,13 @@ class ManageController extends Controller
         $categories = MainCategory::all();
         $category_description = CategoryDescription::all();
         return view("manage.add_base_details",compact("categories","category_description"));
+    }
+    public function view_base_details(){
+        $categories = MainCategory::all();
+        $description = CategoryDescription::all();
+        $sub_description = SubCategoryDescription::all();
+
+        return view("manage.view_base_details",compact("categories","description","sub_description"));
     }
 
     public function add_fields_description(){

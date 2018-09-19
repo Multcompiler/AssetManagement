@@ -16,13 +16,21 @@ Route::get('/', function () {
 });
 
 //Manage Base Fields and Description Fields
-Route::get('/Manage/Base/Add', [
+Route::get('/manage/base/add', [
      "uses" => "ManageController@add_base_details",
      "as" => "add_base_details"
 ]);
-Route::get('/Manage/Field/Add', [
+Route::get('/manage/field/add', [
     "uses" => "ManageController@add_fields_description",
     "as" => "add_fields_description"
+]);
+Route::get('/manage/base/view', [
+    "uses" => "ManageController@view_base_details",
+    "as" => "view_base_details"
+]);
+Route::get('/manage/field/view', [
+    "uses" => "ManageController@view_field_details",
+    "as" => "view_field_details"
 ]);
 Route::get('/get/category/list', [
     "uses" => "ManageController@get_category",

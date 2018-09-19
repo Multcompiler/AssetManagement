@@ -95,6 +95,26 @@
         thisLink.addClass('show-sub');
         nextElem.slideDown();
       }
+
+        if(nextElem.hasClass('br-menu-sub-sub')) {
+
+            if(nextElem.is(':visible')) {
+                thisLink.removeClass('show-sub');
+                nextElem.slideUp();
+            } else {
+                $('.br-menu-link-sub').each(function(){
+                    $(this).removeClass('show-sub');
+                });
+
+                $('.br-menu-sub-sub').each(function(){
+                    $(this).slideUp();
+                });
+
+                thisLink.addClass('show-sub');
+                nextElem.slideDown();
+            }
+            return false;
+        }
       return false;
     }
   });

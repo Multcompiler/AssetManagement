@@ -16249,7 +16249,7 @@ textarea.parsley-success:focus {
   transition: all 0.2s ease-in-out;
 }
 
-.br-menu-sub {
+.br-menu-sub,.br-menu-sub-sub {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 21px;
@@ -16262,7 +16262,11 @@ textarea.parsley-success:focus {
   display: block;
   position: relative;
 }
-.br-menu-sub .sub-link {
+.br-menu-sub-sub .sub-item-sub {
+  display: block;
+  position: relative;
+}
+.br-menu-sub .sub-link,.br-menu-sub-sub .sub-link {
   display: block;
   font-size: 13px;
   color: #adb5bd;
@@ -16271,7 +16275,7 @@ textarea.parsley-success:focus {
   position: relative;
   transition: all 0.2s ease-in-out;
 }
-.br-menu-sub .sub-link::before {
+.br-menu-sub .sub-link::before,.br-menu-sub-sub .sub-link::before {
   content: '';
   position: absolute;
   top: 50%;
