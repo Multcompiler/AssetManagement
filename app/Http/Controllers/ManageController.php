@@ -12,8 +12,10 @@ use App\MainCategory;
 use App\PlantStore;
 use App\SubCategoryDescription;
 use App\VehicleStore;
+use Carbon\Carbon;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Contracts\DataTable;
 
 class ManageController extends Controller
 {
@@ -27,7 +29,10 @@ class ManageController extends Controller
         $description = CategoryDescription::all();
         $sub_description = SubCategoryDescription::all();
 
-        return view("manage.view_base_details",compact("categories","description","sub_description"));
+        $items_description = MainCategory::all(['id', 'category_name'])->pluck('category_name', 'id');
+        $items_sub_description = CategoryDescription::all(['id', 'category_description_name'])->pluck('category_description_name', 'id');
+
+        return view("manage.view_base_details",compact("categories","description","sub_description","items_description","items_sub_description"));
     }
 
     public function add_fields_description(){
@@ -339,6 +344,7 @@ class ManageController extends Controller
         }
 
     }
+
     public function get_category(){
         $categories = MainCategory::all();
         return response()->json($categories);
@@ -351,11 +357,12 @@ class ManageController extends Controller
         $categories = CategoryDescription::where("category_id",$id)->get();
         return response()->json($categories);
     }
+
     public function get_sub_description_list($id){
         $sub_description = SubCategoryDescription::where("category_description_id",$id)->get();
         return response()->json($sub_description);
     }
-    public function remove($id){
+    public function remove_sub_category($id){
         $sub_categ = SubCategoryDescription::find($id);
 
         $sub_categ->delete();
@@ -364,4 +371,52 @@ class ManageController extends Controller
             'success' => 'Record has been deleted successfully!'
         ]);
     }
+    public function remove_description($id){
+        $sub_categ = CategoryDescription::find($id);
+
+        $sub_categ->delete();
+
+        return response()->json([
+            'success' => 'Record has been deleted successfully!'
+        ]);
+    }
+    public function remove_category($id){
+        $sub_categ = MainCategory::find($id);
+
+        $sub_categ->delete();
+
+        return response()->json([
+            'success' => 'Record has been deleted successfully!'
+        ]);
+    }
+
+    public function subDescriptionUpdate(Request $request,$id)
+    {
+        $sub_descrption = SubCategoryDescription::find($id);
+
+        $sub_descrption->sub_category_description_name = $request->description_name;
+        $sub_descrption->category_description_id = $request->description_id;
+
+        $sub_descrption->save();
+
+        return response()->json([
+           "message" => "updated successful"
+        ]);
+    }
+    public function descriptionUpdate(Request $request,$id)
+    {
+        $sub_descrption = CategoryDescription::find($id);
+
+        $sub_descrption->category_description_name = $request->description_name;
+        $sub_descrption->category_id = $request->category_id_form;
+
+        $sub_descrption->save();
+
+        return response()->json([
+           "message" => "updated successful"
+        ]);
+    }
+
+
+
 }

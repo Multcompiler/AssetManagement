@@ -44,8 +44,15 @@ Route::get('/get/description/list/{id}', [
 Route::get('/get/sub/description/list/{id}', [
     "uses" => "ManageController@get_sub_description_list",
 ]);
+
 Route::post('/Manage/Save/Category', [
     "uses" => "ManageController@store_category",
+]);
+Route::post('/edit/sub/description/{id}', [
+    "uses" => "ManageController@subDescriptionUpdate",
+]);
+Route::post('/edit/description/{id}', [
+    "uses" => "ManageController@descriptionUpdate",
 ]);
 Route::post('/Manage/Save/Description', [
     "uses" => "ManageController@store_description",
@@ -56,7 +63,12 @@ Route::post('/Manage/Save/Sub/Description', [
 Route::post('/Manage/Save/Field', [
     "uses" => "ManageController@store_fields",
 ]);
-Route::delete('/Remove/Sub/Description', [
+Route::delete('/Remove/Sub/Description/{id}', [
     "uses" => "ManageController@remove_sub_category",
-    "as" => "remove_sub_category"
+]);
+Route::delete('/Remove/Description/{id}', [
+    "uses" => "ManageController@remove_description",
+]);
+Route::delete('/Remove/Category/{id}', [
+    "uses" => "ManageController@remove_category",
 ]);

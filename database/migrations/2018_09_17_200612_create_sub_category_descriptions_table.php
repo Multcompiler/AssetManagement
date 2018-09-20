@@ -16,7 +16,7 @@ class CreateSubCategoryDescriptionsTable extends Migration
         Schema::create('sub_category_descriptions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_description_id');
-            $table->string('sub_category_description_name');
+            $table->string('sub_category_description_name')->unique();
             $table->timestamps();
         });
     }
