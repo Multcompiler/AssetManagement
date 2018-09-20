@@ -12,7 +12,7 @@
         </a><!-- br-menu-link -->
         <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{route("add_base_details")}}" class="sub-link">Add Base Details</a></li>
-            <li class="sub-item"><a href="{{route("view_base_details")}}" class="sub-link">View Fields Details</a></li>
+            <li class="sub-item"><a href="{{route("view_base_details")}}" class="sub-link">View Base Details</a></li>
         </ul>
     </li>
     <li class="br-menu-item">
@@ -22,7 +22,7 @@
         </a><!-- br-menu-link -->
         <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{route("add_fields_description")}}" class="sub-link">Add Fields Details</a></li>
-            <li class="sub-item"><a href="{{route("view_field_details")}}" class="sub-link">View ields Details</a></li>
+            <li class="sub-item"><a href="{{route("view_field_details")}}" class="sub-link">View Fields Details</a></li>
         </ul>
     </li>
 

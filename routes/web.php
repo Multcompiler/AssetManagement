@@ -56,3 +56,7 @@ Route::post('/Manage/Save/Sub/Description', [
 Route::post('/Manage/Save/Field', [
     "uses" => "ManageController@store_fields",
 ]);
+Route::delete('/Remove/Sub/Description', [
+    "uses" => "ManageController@remove_sub_category",
+    "as" => "remove_sub_category"
+]);

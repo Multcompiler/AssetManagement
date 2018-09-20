@@ -104,12 +104,81 @@
                                 <td>{{\App\CategoryDescription::where("id",$sub_desc->category_description_id)->pluck("category_description_name")->first()}}</td>
                                 <td>{{$sub_desc->sub_category_description_name}}</td>
                                 <td>
-                                    <a href="#" class="btn btn-primary btn-icon">
-                                        <div><i class="fa fa-pencil"></i></div>
+                                    <a class="btn btn-primary btn-icon">
+                                        <div><i class="fa fa-pencil" data-toggle="modal" data-target="#editmodal{{$sub_desc->id}}"></i></div>
                                     </a>
                                     <a href="#" class="btn btn-danger btn-icon">
-                                        <div><i class="fa fa-trash"></i></div>
+                                        <div><i class="fa fa-trash" data-toggle="modal" data-target="#deletemodal{{$sub_desc->id}}"></i></div>
                                     </a>
+
+                                    <!-- EDIT MODAL -->
+                                    <div id="editmodal{{$sub_desc->id}}" class="modal fade">
+                                        <div class="modal-dialog modal-dialog-vertical-center" role="document" style="width: 100%">
+                                            <div class="modal-content bd-0 tx-14">
+                                                <div class="modal-header pd-y-20 pd-x-25">
+                                                    <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Edit Sub-Description</h6>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body pd-25">
+                                                    <div class="container">
+                                                        <div class="col-md-12" style="padding-left: 0;">
+                                                            <div class="form-group">
+                                                                <label class="form-control-label">Sub Category Description: <span class="tx-danger">*</span></label>
+                                                                <input class="form-control" type="text" id="sub_category_description"  placeholder="Enter Sub Category Description" style="height: 20px;width: 90%;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-control-label">Choose Category: <span class="tx-danger">*</span></label>
+                                                                <select id="categ" class="form-control" style="height: 20px;width: 90%;">
+                                                                    <option value=""> -- Default -- </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium">Save changes</button>
+                                                    <button type="button" class="btn btn-secondary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div><!-- modal-dialog -->
+                                    </div><!-- modal -->
+
+                                    <!-- DELETE MODAL -->
+                                    <div id="deletemodal{{$sub_desc->id}}" class="modal fade">
+                                        <div class="modal-dialog modal-dialog-vertical-center" role="document" style="width: 100%">
+                                            <div class="modal-content bd-0 tx-14">
+                                                <div class="modal-header pd-y-20 pd-x-25">
+                                                    <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Delete Sub-Description</h6>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body pd-25">
+                                                    <div class="container">
+                                                        <div class="col-md-12" style="padding-left: 0;">
+                                                            <div class="form-group">
+                                                                <label class="form-control-label">Sub Category Description: <span class="tx-danger">*</span></label>
+                                                                <input class="form-control" type="text" id="sub_category_description"  placeholder="Enter Sub Category Description" style="height: 20px;width: 90%;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-control-label">Choose Category: <span class="tx-danger">*</span></label>
+                                                                <select id="categ" class="form-control" style="height: 20px;width: 90%;">
+                                                                    <option value=""> -- Default -- </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" data-id="{{ $sub_desc->id }}" class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium delete_sub_category">Delete</button>
+
+                                                    <button type="button" class="btn btn-secondary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div><!-- modal-dialog -->
+                                    </div><!-- modal -->
                                 </td>
 
                             </tr>
@@ -130,6 +199,36 @@
 @endsection
 
 @section("page-script")
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(".delete_sub_category").click(function(){
+            var id = $(this).data("id");
+            var token = $(this).data("token");
+            $.ajax(
+                {
+                    url: "user/delete/"+id,
+                    type: 'PUT',
+                    dataType: "JSON",
+                    data: {
+                        "id": id,
+                        "_method": 'DELETE',
+                        "_token": token,
+                    },
+                    success: function ()
+                    {
+                        console.log("it Work");
+                    }
+                });
+
+            console.log("It failed");
+        });
+    </script>
 <script type="text/javascript">
     function viewCategory() {
         $("#category").css("display","block");

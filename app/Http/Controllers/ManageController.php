@@ -12,6 +12,7 @@ use App\MainCategory;
 use App\PlantStore;
 use App\SubCategoryDescription;
 use App\VehicleStore;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class ManageController extends Controller
@@ -353,5 +354,14 @@ class ManageController extends Controller
     public function get_sub_description_list($id){
         $sub_description = SubCategoryDescription::where("category_description_id",$id)->get();
         return response()->json($sub_description);
+    }
+    public function remove($id){
+        $sub_categ = SubCategoryDescription::find($id);
+
+        $sub_categ->delete();
+
+        return response()->json([
+            'success' => 'Record has been deleted successfully!'
+        ]);
     }
 }
