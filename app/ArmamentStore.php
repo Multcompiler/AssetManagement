@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArmamentStore extends Model
 {
-    //
+    public function categories(){
+        return $this->belongsTo(MainCategory::class);
+    }
+    public function descriptions(){
+        return $this->belongsTo(CategoryDescription::class);
+    }
+    public function sub_descriptions(){
+        return $this->belongsTo(SubCategoryDescription::class);
+    }
 }

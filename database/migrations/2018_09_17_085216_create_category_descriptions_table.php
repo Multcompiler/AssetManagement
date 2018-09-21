@@ -15,7 +15,8 @@ class CreateCategoryDescriptionsTable extends Migration
     {
         Schema::create('category_descriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id');
+            $table->integer('category_id')->unsigned()->index();;
+            $table->foreign('category_id')->references('id')->on('main_categories')->onDelete('cascade');
             $table->string('category_description_name')->unique();
             $table->timestamps();
         });
@@ -26,6 +27,7 @@ class CreateCategoryDescriptionsTable extends Migration
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('category_descriptions');
